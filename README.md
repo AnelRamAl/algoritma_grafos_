@@ -1,0 +1,3 @@
+******************** Propuesta personal a algoritmia en grafos ***************
+
+CÓDIGO, ANIMACIÓNES,...
