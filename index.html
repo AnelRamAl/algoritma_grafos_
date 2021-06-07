@@ -1,0 +1,150 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Operaciones con Grafos </title>
+  <link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+  <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<style>
+    /*Estilos*/
+    .vertice {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border: 1px solid;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bolder;
+      -webkit-border-radius: 20px;
+      -moz-border-radius: 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 5;
+    }
+    .div_canvas {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border: 0px ;
+      width: 750px;
+      height: 650px;
+      z-index: 1;
+    }
+
+    .html_canvas {    
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border: 1px transparent;
+      width: 750px;
+      height: 650px;
+      background-color: #f0f0f0; 
+      z-index: 4;
+    }
+    .resultados_despliegue {
+      position: relative;
+      display: inline-block;
+      top: 0px;
+      left: 0px;
+      border: 1px transparent;
+      margin-top: 10px;
+      width: 400px;
+      height: 100px;
+      overflow-y: auto;
+      font-size: 16px;
+      z-index: 4;
+    }
+    .bottomright {
+  position: absolute;
+  bottom: -100px;
+  right: 16px;
+  font-size: 18px;
+}
+.bottomsecond {
+  position: absolute;
+  bottom: -150px;
+  right: 16px;
+  font-size: 18px;
+}
+</style>
+</head>
+<body background="fonfo.jpg">
+
+<div class="container text-right">
+  <form id ="formulario">
+     <button class="btn btn-primary" type="submit">Guardar</button> 
+  </form>
+</div>
+   
+              <div class="container my-10 text-right">
+                <button class="btn btn-danger" onclick="traer()">Abrir</button>
+                <div class="mt-10" id ="contenido">
+                  <p></p>
+                </div>
+
+                </div>
+
+                <div class="col-lg-8"  >
+                    <div id="div_canvas" class="div_canvas">
+                      <canvas id="html_canvas" width="750" height="650" class="html_canvas"></canvas>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div style="display:none;" >
+                    <div class="col-lg-3">                      
+                    </div>                    
+                    <div class="col-lg-12">
+                        &nbsp;
+                    </div>
+                  </div>                    
+
+                    <div class="col-lg-12" >
+                      
+                        <legend style="color:white;">Lista de aristas:</legend>
+                        <h2 style="color:white;" id="aristas" class="resultados_despliegue"></h2>
+                        <legend style="color:white;">Operaciones:</legend>
+                        <h2 style="color:white;" id="resultados" class="resultados_despliegue"></h2>
+                                                                                                                                      
+                        <legend style="text-align:right; color:white;">Aristas:</legend>
+                        <h6 style="text-align:right; color:white;" id="etiquetaArista">&nbsp;</h6>
+                        
+                        <button class="bottomright" style="background-color:white;" type="button" class="btn-danger" onclick="restablecer();">Borrar</button>
+
+                        <button class="bottomsecond" style="background-color:white;" type="button" onclick="calcularOperaciones();">Calculo de operaciones</button>
+
+                    </div>
+
+
+                </div>
+            </div>
+         </form>
+    </div>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas> 
+
+
+<script src="app.js"></script>
+   
+</body>
+</html>
